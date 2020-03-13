@@ -27,7 +27,8 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "vanilla-tilt": "^1.7.0"
   },
   "jest": {
     "collectCoverageFrom": [
