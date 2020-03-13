@@ -1,5 +1,6 @@
 {
   "name": "react-fundamental-workshop",
+  "title": "Modern React Basic 😎",
   "version": "1.0.0",
   "description": "Material for React Fundamental Workshop",
   "main": "src/index.js",
