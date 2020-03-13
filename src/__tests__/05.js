@@ -1,0 +1,5 @@
+describe('05', () => {
+  test('should pass', () => {
+    expect(true).toBe(true)
+  })
+})
