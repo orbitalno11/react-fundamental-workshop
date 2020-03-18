@@ -15,9 +15,9 @@ import React from 'react'
 
 // 🐨 add a style prop to each of them as well so their background color
 // matches what the text says it should be as well as `fontStyle: 'italic'`
-const smallBox = <div>small lightblue box</div>
-const mediumBox = <div>medium pink box</div>
-const largeBox = <div>large orange box</div>
+const smallBox = <div className="box box--small" style={{fontStyle: 'italic', backgroundColor: 'red'}}>small lightblue box</div>
+const mediumBox = <div className="box box--medium" style={{fontStyle: 'italic', backgroundColor: 'blue'}}>medium pink box</div>
+const largeBox = <div className="box box--large" style={{fontStyle: 'italic', backgroundColor: 'yellow'}}>large orange box</div>
 
 function Usage() {
   return (

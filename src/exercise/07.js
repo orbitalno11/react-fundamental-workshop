@@ -2,9 +2,11 @@
 
 import React from 'react'
 
-function UsernameForm({onSubmitUsername}) {
+function UsernameForm({ onSubmitUsername }) {
   // 🐨 add some state (with React.useState) for the error.
   // 💰 const [error, setError] = React.useState(null)
+
+  const [error, setError] = React.useState()
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -15,6 +17,15 @@ function UsernameForm({onSubmitUsername}) {
   // uses `event.target.value` to get the value of the input
   // 💰 remember this event will be triggered on the input, not the form
 
+  function handleChange(event) {
+    const value = event.target.value
+    const isValid = value === value.toLowerCase()
+    if (!isValid) {
+      setError("Username must be lower case")
+    } else {
+      setError(null)
+    }
+  }
   // 🐨 use the value of the input to determine whether there's an error
   // 💰 There's an error if the user typed any upper-case characters
   // 💰 You can check this really easily via `const isValid = value === value.toLowerCase()`
@@ -30,10 +41,12 @@ function UsernameForm({onSubmitUsername}) {
           id="usernameInput"
           type="text"
           // 🐨 add your onChange handler here
+          onChange={handleChange}
         />
       </div>
       {/* 🐨 if there's an error, then render it in a div here */}
       {/* 🐨 add a disabled prop to this button that's set to true if there's an error */}
+      <div style={{ color: "red" }}>{error}</div>
       <button type="submit">Submit</button>
     </form>
   )
@@ -42,7 +55,7 @@ function UsernameForm({onSubmitUsername}) {
 function Usage() {
   const onSubmitUsername = username => console.info('username', username)
   return (
-    <div style={{minWidth: 400}}>
+    <div style={{ minWidth: 400 }}>
       <UsernameForm onSubmitUsername={onSubmitUsername} />
     </div>
   )
